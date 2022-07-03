@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     let s = Some(String::from("Hello!"));
 
     if let Some(_s) = s {
@@ -6,4 +7,5 @@ fn main() {
     }
 
     println!("{:?}", s);
+    // ANCHOR_END: here
 }

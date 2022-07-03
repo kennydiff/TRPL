@@ -4,6 +4,7 @@ struct Rectangle {
     height: u32,
 }
 
+// ANCHOR: here
 impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
@@ -15,6 +16,7 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 }
+// ANCHOR_END: here
 
 fn main() {
     let rect1 = Rectangle {

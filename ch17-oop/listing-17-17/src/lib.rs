@@ -3,7 +3,10 @@ pub struct Post {
     content: String,
 }
 
+// ANCHOR: here
 impl Post {
+    // --snip--
+    // ANCHOR_END: here
     pub fn new() -> Post {
         Post {
             state: Some(Box::new(Draft {})),
@@ -15,9 +18,12 @@ impl Post {
         self.content.push_str(text);
     }
 
+    // ANCHOR: here
     pub fn content(&self) -> &str {
         self.state.as_ref().unwrap().content(self)
     }
+    // --snip--
+    // ANCHOR_END: here
 
     pub fn request_review(&mut self) {
         if let Some(s) = self.state.take() {
@@ -30,7 +36,9 @@ impl Post {
             self.state = Some(s.approve())
         }
     }
+    // ANCHOR: here
 }
+// ANCHOR_END: here
 
 trait State {
     fn request_review(self: Box<Self>) -> Box<dyn State>;

@@ -6,6 +6,7 @@ fn main() {
         ChangeColor(i32, i32, i32),
     }
 
+    // ANCHOR: here
     impl Message {
         fn call(&self) {
             // method body would be defined here
@@ -14,4 +15,5 @@ fn main() {
 
     let m = Message::Write(String::from("hello"));
     m.call();
+    // ANCHOR_END: here
 }

@@ -3,6 +3,8 @@ use std::thread;
 use std::time::Duration;
 
 fn main() {
+    // ANCHOR: here
+    // --snip--
 
     let (tx, rx) = mpsc::channel();
 
@@ -39,4 +41,6 @@ fn main() {
         println!("Got: {}", received);
     }
 
+    // --snip--
+    // ANCHOR_END: here
 }

@@ -17,6 +17,7 @@ impl List {
     }
 }
 
+// ANCHOR: here
 fn main() {
     let a = Rc::new(Cons(5, RefCell::new(Rc::new(Nil))));
 
@@ -40,3 +41,4 @@ fn main() {
     // it will overflow the stack
     // println!("a next item = {:?}", a.tail());
 }
+// ANCHOR_END: here

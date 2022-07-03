@@ -12,7 +12,7 @@ impl<'a, T> LimitTracker<'a, T>
 where
     T: Messenger,
 {
-    pub fn new(messenger: &T, max: usize) -> LimitTracker<T> {
+    pub fn new(messenger: &'a T, max: usize) -> LimitTracker<'a, T> {
         LimitTracker {
             messenger,
             value: 0,
@@ -37,6 +37,7 @@ where
     }
 }
 
+// ANCHOR: here
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -69,3 +70,4 @@ mod tests {
         assert_eq!(mock_messenger.sent_messages.len(), 1);
     }
 }
+// ANCHOR_END: here

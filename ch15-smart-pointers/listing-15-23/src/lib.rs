@@ -12,7 +12,7 @@ impl<'a, T> LimitTracker<'a, T>
 where
     T: Messenger,
 {
-    pub fn new(messenger: &T, max: usize) -> LimitTracker<T> {
+    pub fn new(messenger: &'a T, max: usize) -> LimitTracker<'a, T> {
         LimitTracker {
             messenger,
             value: 0,
@@ -54,6 +54,7 @@ mod tests {
         }
     }
 
+    // ANCHOR: here
     impl Messenger for MockMessenger {
         fn send(&self, message: &str) {
             let mut one_borrow = self.sent_messages.borrow_mut();
@@ -63,6 +64,7 @@ mod tests {
             two_borrow.push(String::from(message));
         }
     }
+    // ANCHOR_END: here
 
     #[test]
     fn it_sends_an_over_75_percent_warning_message() {

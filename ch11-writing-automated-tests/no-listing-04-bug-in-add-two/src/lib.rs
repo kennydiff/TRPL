@@ -1,6 +1,8 @@
+// ANCHOR: here
 pub fn add_two(a: i32) -> i32 {
     a + 3
 }
+// ANCHOR_END: here
 
 #[cfg(test)]
 mod tests {

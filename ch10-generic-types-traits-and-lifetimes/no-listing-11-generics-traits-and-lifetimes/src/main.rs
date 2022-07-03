@@ -10,6 +10,7 @@ fn main() {
     println!("The longest string is {}", result);
 }
 
+// ANCHOR: here
 use std::fmt::Display;
 
 fn longest_with_an_announcement<'a, T>(
@@ -27,3 +28,4 @@ where
         y
     }
 }
+// ANCHOR_END: here

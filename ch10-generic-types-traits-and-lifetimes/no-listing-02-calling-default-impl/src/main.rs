@@ -1,6 +1,7 @@
-use chapter10::{self, NewsArticle, Summary};
+use aggregator::{self, NewsArticle, Summary};
 
 fn main() {
+    // ANCHOR: here
     let article = NewsArticle {
         headline: String::from("Penguins win the Stanley Cup Championship!"),
         location: String::from("Pittsburgh, PA, USA"),
@@ -12,4 +13,5 @@ fn main() {
     };
 
     println!("New article available! {}", article.summarize());
+    // ANCHOR_END: here
 }

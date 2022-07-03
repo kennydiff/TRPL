@@ -1,7 +1,9 @@
 fn main() {
-    let some_u8_value = Some(0u8);
-    match some_u8_value {
-        Some(3) => println!("three"),
+    // ANCHOR: here
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {}", max),
         _ => (),
     }
+    // ANCHOR_END: here
 }

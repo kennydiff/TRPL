@@ -6,6 +6,8 @@ fn main() {
     println!("The longest string is {}", result);
 }
 
+// ANCHOR: here
 fn longest<'a>(x: &'a str, y: &str) -> &'a str {
     x
 }
+// ANCHOR_END: here

@@ -10,6 +10,7 @@ impl Rectangle {
     }
 }
 
+// ANCHOR: here
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -28,3 +29,4 @@ mod tests {
         assert!(larger.can_hold(&smaller));
     }
 }
+// ANCHOR_END: here

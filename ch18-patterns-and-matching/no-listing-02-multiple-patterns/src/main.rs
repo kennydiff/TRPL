@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     let x = 1;
 
     match x {
@@ -6,4 +7,5 @@ fn main() {
         3 => println!("three"),
         _ => println!("anything"),
     }
+    // ANCHOR_END: here
 }

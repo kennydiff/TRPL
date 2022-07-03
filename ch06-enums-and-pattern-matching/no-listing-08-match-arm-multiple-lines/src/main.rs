@@ -5,6 +5,7 @@ enum Coin {
     Quarter,
 }
 
+// ANCHOR: here
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => {
@@ -16,5 +17,6 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter => 25,
     }
 }
+// ANCHOR_END: here
 
 fn main() {}

@@ -28,6 +28,7 @@ impl Summary for Tweet {
     }
 }
 
+// ANCHOR: here
 fn returns_summarizable() -> impl Summary {
     Tweet {
         username: String::from("horse_ebooks"),
@@ -38,3 +39,4 @@ fn returns_summarizable() -> impl Summary {
         retweet: false,
     }
 }
+// ANCHOR_END: here

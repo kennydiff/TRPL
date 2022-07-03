@@ -28,6 +28,8 @@ impl Summary for Tweet {
     }
 }
 
+// ANCHOR: here
 pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
 }
+// ANCHOR_END: here

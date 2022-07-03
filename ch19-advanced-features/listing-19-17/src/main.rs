@@ -26,7 +26,9 @@ impl Human {
     }
 }
 
+// ANCHOR: here
 fn main() {
     let person = Human;
     person.fly();
 }
+// ANCHOR_END: here

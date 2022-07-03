@@ -1,3 +1,4 @@
+// ANCHOR: here
 fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes();
 
@@ -9,5 +10,6 @@ fn first_word(s: &String) -> &str {
 
     &s[..]
 }
+// ANCHOR_END: here
 
 fn main() {}

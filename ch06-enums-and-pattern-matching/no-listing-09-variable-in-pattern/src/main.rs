@@ -2,6 +2,7 @@
 enum UsState {
     Alabama,
     Alaska,
+    // --snip--
 }
 
 enum Coin {
@@ -11,6 +12,7 @@ enum Coin {
     Quarter(UsState),
 }
 
+// ANCHOR: here
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => 1,
@@ -22,6 +24,7 @@ fn value_in_cents(coin: Coin) -> u8 {
         }
     }
 }
+// ANCHOR_END: here
 
 fn main() {
     value_in_cents(Coin::Quarter(UsState::Alaska));

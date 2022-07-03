@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     enum IpAddrKind {
         V4,
         V6,
@@ -18,4 +19,5 @@ fn main() {
         kind: IpAddrKind::V6,
         address: String::from("::1"),
     };
+    // ANCHOR_END: here
 }

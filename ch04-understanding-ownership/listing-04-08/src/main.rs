@@ -10,6 +10,7 @@ fn first_word(s: &String) -> usize {
     s.len()
 }
 
+// ANCHOR: here
 fn main() {
     let mut s = String::from("hello world");
 
@@ -20,3 +21,4 @@ fn main() {
     // word still has the value 5 here, but there's no more string that
     // we could meaningfully use the value 5 with. word is now totally invalid!
 }
+// ANCHOR_END: here

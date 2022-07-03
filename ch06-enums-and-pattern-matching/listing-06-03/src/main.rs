@@ -1,3 +1,4 @@
+// ANCHOR: here
 enum Coin {
     Penny,
     Nickel,
@@ -13,5 +14,6 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter => 25,
     }
 }
+// ANCHOR_END: here
 
 fn main() {}

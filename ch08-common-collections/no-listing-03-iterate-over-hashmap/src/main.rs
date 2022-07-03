@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     use std::collections::HashMap;
 
     let mut scores = HashMap::new();
@@ -9,4 +10,5 @@ fn main() {
     for (key, value) in &scores {
         println!("{}: {}", key, value);
     }
+    // ANCHOR_END: here
 }

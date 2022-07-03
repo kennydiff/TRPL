@@ -32,15 +32,21 @@ impl Post {
     }
 }
 
+// ANCHOR: here
 trait State {
+    // --snip--
+    // ANCHOR_END: here
     fn request_review(self: Box<Self>) -> Box<dyn State>;
     fn approve(self: Box<Self>) -> Box<dyn State>;
 
+    // ANCHOR: here
     fn content<'a>(&self, post: &'a Post) -> &'a str {
         ""
     }
 }
 
+// --snip--
+// ANCHOR_END: here
 
 struct Draft {}
 
@@ -66,9 +72,12 @@ impl State for PendingReview {
     }
 }
 
+// ANCHOR: here
 struct Published {}
 
 impl State for Published {
+    // --snip--
+    // ANCHOR_END: here
     fn request_review(self: Box<Self>) -> Box<dyn State> {
         self
     }
@@ -77,7 +86,9 @@ impl State for Published {
         self
     }
 
+    // ANCHOR: here
     fn content<'a>(&self, post: &'a Post) -> &'a str {
         &post.content
     }
 }
+// ANCHOR_END: here

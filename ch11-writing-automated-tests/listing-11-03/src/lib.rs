@@ -1,3 +1,4 @@
+// ANCHOR: here
 #[cfg(test)]
 mod tests {
     #[test]
@@ -10,3 +11,4 @@ mod tests {
         panic!("Make this test fail");
     }
 }
+// ANCHOR_END: here

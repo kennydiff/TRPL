@@ -1,4 +1,4 @@
-use chapter10::{self, Summary, Tweet};
+use aggregator::{Summary, Tweet};
 
 fn main() {
     let tweet = Tweet {

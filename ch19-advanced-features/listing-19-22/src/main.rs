@@ -1,3 +1,4 @@
+// ANCHOR: here
 use std::fmt;
 
 trait OutlinePrint: fmt::Display {
@@ -11,5 +12,6 @@ trait OutlinePrint: fmt::Display {
         println!("{}", "*".repeat(len + 4));
     }
 }
+// ANCHOR_END: here
 
 fn main() {}

@@ -26,9 +26,11 @@ impl Human {
     }
 }
 
+// ANCHOR: here
 fn main() {
     let person = Human;
     Pilot::fly(&person);
     Wizard::fly(&person);
     person.fly();
 }
+// ANCHOR_END: here

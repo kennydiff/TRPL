@@ -10,12 +10,15 @@ impl Rectangle {
     }
 }
 
+// ANCHOR: here
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn larger_can_hold_smaller() {
+        // --snip--
+        // ANCHOR_END: here
         let larger = Rectangle {
             width: 8,
             height: 7,
@@ -26,6 +29,7 @@ mod tests {
         };
 
         assert!(larger.can_hold(&smaller));
+        // ANCHOR: here
     }
 
     #[test]
@@ -42,3 +46,4 @@ mod tests {
         assert!(!smaller.can_hold(&larger));
     }
 }
+// ANCHOR_END: here

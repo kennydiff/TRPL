@@ -4,11 +4,14 @@ struct Rectangle {
     height: u32,
 }
 
+// ANCHOR: here
+// --snip--
 impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width < other.width && self.height > other.height
     }
 }
+// ANCHOR_END: here
 
 #[cfg(test)]
 mod tests {

@@ -6,6 +6,7 @@ pub fn greeting(name: &str) -> String {
 mod tests {
     use super::*;
 
+    // ANCHOR: here
     #[test]
     fn greeting_contains_name() {
         let result = greeting("Carol");
@@ -15,4 +16,5 @@ mod tests {
             result
         );
     }
+    // ANCHOR_END: here
 }

@@ -1,10 +1,11 @@
 struct User {
+    active: bool,
     username: String,
     email: String,
     sign_in_count: u64,
-    active: bool,
 }
 
+// ANCHOR: here
 fn build_user(email: String, username: String) -> User {
     User {
         email: email,
@@ -13,6 +14,7 @@ fn build_user(email: String, username: String) -> User {
         sign_in_count: 1,
     }
 }
+// ANCHOR_END: here
 
 fn main() {
     let user1 = build_user(

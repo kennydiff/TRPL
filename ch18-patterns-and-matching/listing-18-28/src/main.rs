@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     let x = 4;
     let y = false;
 
@@ -6,4 +7,5 @@ fn main() {
         4 | 5 | 6 if y => println!("yes"),
         _ => println!("no"),
     }
+    // ANCHOR_END: here
 }

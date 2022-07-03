@@ -28,6 +28,7 @@ impl Summary for Tweet {
     }
 }
 
+// ANCHOR: here
 fn returns_summarizable(switch: bool) -> impl Summary {
     if switch {
         NewsArticle {
@@ -52,3 +53,4 @@ fn returns_summarizable(switch: bool) -> impl Summary {
         }
     }
 }
+// ANCHOR_END: here

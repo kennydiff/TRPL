@@ -1,6 +1,8 @@
+// ANCHOR: here
 pub fn greeting(name: &str) -> String {
     String::from("Hello!")
 }
+// ANCHOR_END: here
 
 #[cfg(test)]
 mod tests {

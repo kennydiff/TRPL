@@ -1,7 +1,7 @@
-use std::sync::mpsc;
-use std::sync::Arc;
-use std::sync::Mutex;
-use std::thread;
+use std::{
+    sync::{mpsc, Arc, Mutex},
+    thread,
+};
 
 pub struct ThreadPool {
     workers: Vec<Worker>,
@@ -54,17 +54,19 @@ impl Drop for ThreadPool {
     }
 }
 
+// ANCHOR: here
 struct Worker {
     id: usize,
     thread: Option<thread::JoinHandle<()>>,
 }
+// ANCHOR_END: here
 
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
         let thread = thread::spawn(move || loop {
             let job = receiver.lock().unwrap().recv().unwrap();
 
-            println!("Worker {} got a job; executing.", id);
+            println!("Worker {id} got a job; executing.");
 
             job();
         });

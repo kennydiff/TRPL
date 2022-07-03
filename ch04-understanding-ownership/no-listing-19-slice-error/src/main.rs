@@ -10,6 +10,7 @@ fn first_word(s: &String) -> &str {
     &s[..]
 }
 
+// ANCHOR: here
 fn main() {
     let mut s = String::from("hello world");
 
@@ -19,3 +20,4 @@ fn main() {
 
     println!("the first word is: {}", word);
 }
+// ANCHOR_END: here

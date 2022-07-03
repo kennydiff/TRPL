@@ -1,8 +1,11 @@
-use std::sync::mpsc;
-use std::thread;
-use std::sync::Arc;
-use std::sync::Mutex;
+// ANCHOR: here
+use std::{
+    sync::{mpsc, Arc, Mutex},
+    thread,
+};
+// --snip--
 
+// ANCHOR_END: here
 pub struct ThreadPool {
     workers: Vec<Worker>,
     sender: mpsc::Sender<Job>,
@@ -10,7 +13,10 @@ pub struct ThreadPool {
 
 struct Job;
 
+// ANCHOR: here
 impl ThreadPool {
+    // --snip--
+    // ANCHOR_END: here
     /// Create a new ThreadPool.
     ///
     /// The size is the number of threads in the pool.
@@ -18,6 +24,7 @@ impl ThreadPool {
     /// # Panics
     ///
     /// The `new` function will panic if the size is zero.
+    // ANCHOR: here
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
 
@@ -34,26 +41,36 @@ impl ThreadPool {
         ThreadPool { workers, sender }
     }
 
+    // --snip--
+    // ANCHOR_END: here
 
     pub fn execute<F>(&self, f: F)
     where
         F: FnOnce() + Send + 'static,
     {
     }
+    // ANCHOR: here
 }
 
+// --snip--
 
+// ANCHOR_END: here
 struct Worker {
     id: usize,
     thread: thread::JoinHandle<()>,
 }
 
+// ANCHOR: here
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
+        // --snip--
+        // ANCHOR_END: here
         let thread = thread::spawn(|| {
             receiver;
         });
 
         Worker { id, thread }
+        // ANCHOR: here
     }
 }
+// ANCHOR_END: here

@@ -2,6 +2,8 @@ pub struct Guess {
     value: i32,
 }
 
+// ANCHOR: here
+// --snip--
 impl Guess {
     pub fn new(value: i32) -> Guess {
         if value < 1 {
@@ -11,6 +13,7 @@ impl Guess {
         Guess { value }
     }
 }
+// ANCHOR_END: here
 
 #[cfg(test)]
 mod tests {

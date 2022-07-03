@@ -1,23 +1,21 @@
-use std::sync::mpsc;
-use std::sync::Arc;
-use std::sync::Mutex;
-use std::thread;
+use std::{
+    sync::{mpsc, Arc, Mutex},
+    thread,
+};
 
+// ANCHOR: here
 pub struct ThreadPool {
     workers: Vec<Worker>,
-    sender: mpsc::Sender<Message>,
+    sender: Option<mpsc::Sender<Job>>,
 }
-
+// --snip--
+// ANCHOR_END: here
 
 type Job = Box<dyn FnOnce() + Send + 'static>;
 
-enum Message {
-    NewJob(Job),
-    Terminate,
-}
-
+// ANCHOR: here
 impl ThreadPool {
-
+    // ANCHOR_END: here
     /// Create a new ThreadPool.
     ///
     /// The size is the number of threads in the pool.
@@ -25,7 +23,11 @@ impl ThreadPool {
     /// # Panics
     ///
     /// The `new` function will panic if the size is zero.
+    // ANCHOR: here
     pub fn new(size: usize) -> ThreadPool {
+        // --snip--
+
+        // ANCHOR_END: here
         assert!(size > 0);
 
         let (sender, receiver) = mpsc::channel();
@@ -38,7 +40,11 @@ impl ThreadPool {
             workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
 
-        ThreadPool { workers, sender }
+        // ANCHOR: here
+        ThreadPool {
+            workers,
+            sender: Some(sender),
+        }
     }
 
     pub fn execute<F>(&self, f: F)
@@ -47,13 +53,14 @@ impl ThreadPool {
     {
         let job = Box::new(f);
 
-        self.sender.send(Message::NewJob(job)).unwrap();
+        self.sender.as_ref().unwrap().send(job).unwrap();
     }
 }
 
-
 impl Drop for ThreadPool {
     fn drop(&mut self) {
+        drop(self.sender.take());
+
         for worker in &mut self.workers {
             println!("Shutting down worker {}", worker.id);
 
@@ -63,6 +70,7 @@ impl Drop for ThreadPool {
         }
     }
 }
+// ANCHOR_END: here
 
 struct Worker {
     id: usize,
@@ -70,22 +78,13 @@ struct Worker {
 }
 
 impl Worker {
-    fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Message>>>) -> Worker {
+    fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
         let thread = thread::spawn(move || loop {
-            let message = receiver.lock().unwrap().recv().unwrap();
+            let job = receiver.lock().unwrap().recv().unwrap();
 
-            match message {
-                Message::NewJob(job) => {
-                    println!("Worker {} got a job; executing.", id);
+            println!("Worker {id} got a job; executing.");
 
-                    job();
-                }
-                Message::Terminate => {
-                    println!("Worker {} was told to terminate.", id);
-
-                    break;
-                }
-            }
+            job();
         });
 
         Worker {

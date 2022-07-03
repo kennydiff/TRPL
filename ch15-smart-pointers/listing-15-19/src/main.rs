@@ -6,6 +6,7 @@ enum List {
 use crate::List::{Cons, Nil};
 use std::rc::Rc;
 
+// ANCHOR: here
 fn main() {
     let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
     println!("count after creating a = {}", Rc::strong_count(&a));
@@ -17,3 +18,4 @@ fn main() {
     }
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 }
+// ANCHOR_END: here

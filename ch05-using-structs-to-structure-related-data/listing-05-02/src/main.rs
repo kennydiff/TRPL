@@ -1,10 +1,11 @@
 struct User {
+    active: bool,
     username: String,
     email: String,
     sign_in_count: u64,
-    active: bool,
 }
 
+// ANCHOR: here
 fn main() {
     let user1 = User {
         email: String::from("someone@example.com"),
@@ -13,3 +14,4 @@ fn main() {
         sign_in_count: 1,
     };
 }
+// ANCHOR_END: here

@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: here
     let x = 'c';
 
     match x {
@@ -6,4 +7,5 @@ fn main() {
         'k'..='z' => println!("late ASCII letter"),
         _ => println!("something else"),
     }
+    // ANCHOR_END: here
 }

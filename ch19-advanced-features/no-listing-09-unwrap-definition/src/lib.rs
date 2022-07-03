@@ -5,6 +5,7 @@ enum Option<T> {
 
 use crate::Option::*;
 
+// ANCHOR: here
 impl<T> Option<T> {
     pub fn unwrap(self) -> T {
         match self {
@@ -13,3 +14,4 @@ impl<T> Option<T> {
         }
     }
 }
+// ANCHOR_END: here

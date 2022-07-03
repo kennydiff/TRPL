@@ -1,3 +1,4 @@
+// ANCHOR: here
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -9,3 +10,4 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 }
+// ANCHOR_END: here

@@ -8,6 +8,7 @@ struct Node {
     children: RefCell<Vec<Rc<Node>>>,
 }
 
+// ANCHOR: here
 fn main() {
     let leaf = Rc::new(Node {
         value: 3,
@@ -50,3 +51,4 @@ fn main() {
         Rc::weak_count(&leaf),
     );
 }
+// ANCHOR_END: here

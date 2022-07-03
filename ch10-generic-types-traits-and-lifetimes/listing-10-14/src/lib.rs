@@ -1,8 +1,10 @@
+// ANCHOR: here
 pub trait Summary {
     fn summarize(&self) -> String {
         String::from("(Read more...)")
     }
 }
+// ANCHOR_END: here
 
 pub struct NewsArticle {
     pub headline: String,
