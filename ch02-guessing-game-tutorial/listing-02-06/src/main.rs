@@ -5,7 +5,7 @@ use std::io;
 fn main() {
     println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+    let secret_number = rand::thread_rng().gen_range(1..=100);  // K_22704 与 gen_range(1..101) 等价 , rust 的区间值一般含头不含尾
 
     loop {
         println!("Please input your guess.");

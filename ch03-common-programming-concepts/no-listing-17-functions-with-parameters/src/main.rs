@@ -1,5 +1,5 @@
 fn main() {
-    another_function(5);
+    another_function(7);
 }
 
 fn another_function(x: i32) {
