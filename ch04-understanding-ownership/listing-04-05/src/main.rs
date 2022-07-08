@@ -1,5 +1,6 @@
 fn main() {
-    let s1 = String::from("hello");
+    let b: i32 = 46;
+    let s1 = String::from("hello world");
 
     let (s2, len) = calculate_length(s1);
 

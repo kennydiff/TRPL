@@ -1,6 +1,6 @@
 fn main() {
     let s1 = gives_ownership();         // gives_ownership moves its return
-                                        // value into s1
+                                                // value into s1
 
     let s2 = String::from("hello");     // s2 comes into scope
 
@@ -15,7 +15,7 @@ fn gives_ownership() -> String {             // gives_ownership will move its
                                              // that calls it
 
     let some_string = String::from("yours"); // some_string comes into scope
-
+    println!("{}", some_string);  // K_22705 
     some_string                              // some_string is returned and
                                              // moves out to the calling
                                              // function
@@ -24,6 +24,6 @@ fn gives_ownership() -> String {             // gives_ownership will move its
 // This function takes a String and returns one
 fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
                                                       // scope
-
+    println!("{}", a_string);  // K_22705 
     a_string  // a_string is returned and moves out to the calling function
 }

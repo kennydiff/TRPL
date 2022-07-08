@@ -12,12 +12,10 @@ fn first_word(s: &String) -> usize {
 
 // ANCHOR: here
 fn main() {
-    let mut s = String::from("hello world");
-
+    let mut s = String::from("hello world!");
     let word = first_word(&s); // word will get the value 5
-
+    println!("The first word in '{s}' is '{word}'");
     s.clear(); // this empties the String, making it equal to ""
-
     // word still has the value 5 here, but there's no more string that
     // we could meaningfully use the value 5 with. word is now totally invalid!
 }
