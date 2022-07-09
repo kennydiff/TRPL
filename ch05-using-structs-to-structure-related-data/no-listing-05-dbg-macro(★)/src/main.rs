@@ -1,5 +1,5 @@
 #[derive(Debug)]
-struct Rectangle {
+struct Rectangle {  // K_22708 矩形
     width: u32,
     height: u32,
 }
@@ -7,7 +7,7 @@ struct Rectangle {
 fn main() {
     let scale = 2;
     let rect1 = Rectangle {
-        width: dbg!(30 * scale),
+        width: dbg!(30 * scale),  // K_22708 dbg!是宏, 它会在调试时打印出变量的值(dirty debug)
         height: 50,
     };
 

@@ -1,8 +1,8 @@
 // ANCHOR: here
 fn first_word(s: &str) -> &str {
     // ANCHOR_END: here
-    let bytes = s.as_bytes();
-
+    let bytes = s.as_bytes();  // to whole slices of `String`s
+                                      // to whole slices of `String`s
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
             return &s[0..i];

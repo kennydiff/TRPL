@@ -5,8 +5,8 @@ use std::io;
 fn main() {
     println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
-
+    let secret_number = rand::thread_rng().gen_range(1..=100);  // K_22709 - Generate a random number between 1 and 100
+                                                                     // K_22709
     println!("The secret number is: {secret_number}");
 
     loop {

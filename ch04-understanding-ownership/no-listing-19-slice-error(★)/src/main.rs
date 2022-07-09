@@ -15,9 +15,11 @@ fn main() {
     let mut s = String::from("hello world");
 
     let word = first_word(&s);
+    
 
     s.clear(); // error!
+    
+    println!("the first word is: {}", word);  // K_22708 这行改放到s.clear()之前的话，就不报错了
 
-    println!("the first word is: {}", word);
 }
 // ANCHOR_END: here

@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug)]  // K_22708 派生 Debug 子属性
 struct Rectangle {
     width: u32,
     height: u32,
@@ -10,5 +10,5 @@ fn main() {
         height: 50,
     };
 
-    println!("rect1 is {:#?}", rect1);
+    println!("rect1 is {:#?}", rect1);  // K_22708 注意{:#?}和{:?}的区别
 }

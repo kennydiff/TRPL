@@ -6,10 +6,10 @@ struct User {
 }
 
 // ANCHOR: here
-fn build_user(email: String, username: String) -> User {
+fn build_user(email2: String, username2: String) -> User {
     User {
-        email: email,
-        username: username,
+        email: email2,
+        username: username2,
         active: true,
         sign_in_count: 1,
     }

@@ -1,5 +1,6 @@
 fn main() {
     let string = no_dangle();
+    println!("{}", string);
 }
 
 // ANCHOR: here
