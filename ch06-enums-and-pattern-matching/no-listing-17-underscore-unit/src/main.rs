@@ -7,7 +7,7 @@ fn main() {
         _ => (),
     }
 
-    fn add_fancy_hat() {}
+    fn add_fancy_hat() {}  // K_22710 main()函数内的函数??? ...
     fn remove_fancy_hat() {}
     // ANCHOR_END: here
 }
