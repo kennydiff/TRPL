@@ -4,6 +4,8 @@ fn main() {
     let s2 = String::from("tac");
     let s3 = String::from("toe");
 
-    let s = format!("{}-{}-{}", s1, s2, s3);
+    let s = format!("{}-{}-{}", s1, s2, s3);  // K_22711 注意这种类似println!的format!的写法，更合理简洁，
+    // println!("{}", s);
+    println!("{}-{}-{}", s1, s2, s3);
     // ANCHOR_END: here
 }

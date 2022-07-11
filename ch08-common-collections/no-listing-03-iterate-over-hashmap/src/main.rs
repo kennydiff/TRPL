@@ -1,6 +1,8 @@
+
+
 fn main() {
     // ANCHOR: here
-    use std::collections::HashMap;
+    use std::collections::HashMap;  // K_22711 这个use放到main()之外也没问题的
 
     let mut scores = HashMap::new();
 

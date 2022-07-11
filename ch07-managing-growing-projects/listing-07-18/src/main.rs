@@ -1,7 +1,10 @@
 use rand::Rng;
 // ANCHOR: here
 // --snip--
-use std::{cmp::Ordering, io};
+use std::{cmp::Ordering, io};  // K_22711 替代以下代码
+// use std::cmp::Ordering;
+// use std::io;
+
 // --snip--
 // ANCHOR_END: here
 
