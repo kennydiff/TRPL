@@ -1,4 +1,4 @@
-use aggregator::{Summary, Tweet};
+use aggregato_r::{Summary, Tweet};  // K_22713 aggregator定义在Cargo.toml里
 
 fn main() {
     let tweet = Tweet {

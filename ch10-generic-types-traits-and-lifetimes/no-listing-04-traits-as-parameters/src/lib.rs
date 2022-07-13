@@ -29,7 +29,7 @@ impl Summary for Tweet {
 }
 
 // ANCHOR: here
-pub fn notify(item: &impl Summary) {
+pub fn notify(item: &impl Summary) {  // K_22713 traits作为参数的时候，需要加上 &impl，意思是实现了这个trait的所有类型都可以传进来
     println!("Breaking news! {}", item.summarize());
 }
 // ANCHOR_END: here

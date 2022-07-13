@@ -6,9 +6,15 @@ fn main() {
     println!("The longest string is {}", result);
 }
 
-// ANCHOR: here
 fn longest<'a>(x: &str, y: &str) -> &'a str {
-    let result = String::from("really long string");
-    result.as_str()
+    let result = "really long string";
+    result
 }
+// ANCHOR: here
+// fn longest<'a>(x: &str, y: &str) -> &'a str {
+//     let result = String::from("really long string");
+//     result.as_str()
+// }
 // ANCHOR_END: here
+
+

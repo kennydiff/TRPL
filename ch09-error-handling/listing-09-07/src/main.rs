@@ -13,4 +13,5 @@ fn read_username_from_file() -> Result<String, io::Error> {
 
 fn main() {
     let username = read_username_from_file().expect("Unable to get username");
+    println!("Username is: {}", username);
 }

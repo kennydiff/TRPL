@@ -8,7 +8,7 @@ fn main() {
         Ok(file) => file,
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::create("hello.txt") {
-                Ok(fc) => fc,
+                Ok(f_c) => f_c,  // K_22713 这里 f_c 随便什么名字都可以的临时变量
                 Err(e) => panic!("Problem creating the file: {:?}", e),
             },
             other_error => {

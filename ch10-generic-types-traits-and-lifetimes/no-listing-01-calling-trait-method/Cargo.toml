@@ -1,5 +1,5 @@
 [package]
-name = "aggregator"
+name = "aggregato_r"  # K_22713 aggregato_r is the name of the R package
 version = "0.1.0"
 edition = "2021"
 

@@ -29,7 +29,7 @@ impl Summary for Tweet {
 }
 
 // ANCHOR: here
-fn returns_summarizable() -> impl Summary {
+fn returns_summarizable() -> impl Summary {  // K_22713 返回的是一个实现了 Summary 这个trait 的类型
     Tweet {
         username: String::from("horse_ebooks"),
         content: String::from(

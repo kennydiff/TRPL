@@ -42,7 +42,7 @@ fn returns_summarizable(switch: bool) -> impl Summary {
                  hockey team in the NHL.",
             ),
         }
-    } else {
+    } else {  // K_22713 这里if else 虽然返回的都是实现了Summary这个trait的类型，但是返回的type类型可能不同，不被允许
         Tweet {
             username: String::from("horse_ebooks"),
             content: String::from(
