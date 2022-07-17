@@ -3,7 +3,7 @@ use std::fs;
 
 // ANCHOR: here
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = env::args().collect();  // K_22716 返回一个Vec<String> 里面是主程序的参数表
 
     let config = Config::new(&args);
     // ANCHOR_END: here

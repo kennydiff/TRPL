@@ -14,7 +14,6 @@ impl Screen {
     }
 }
 
-// ANCHOR: here
 pub struct Button {
     pub width: u32,
     pub height: u32,
@@ -26,4 +25,3 @@ impl Draw for Button {
         // code to actually draw a button
     }
 }
-// ANCHOR_END: here

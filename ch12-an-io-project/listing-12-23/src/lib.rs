@@ -23,6 +23,7 @@ impl Config {
         let file_path = args[2].clone();
 
         let ignore_case = env::var("IGNORE_CASE").is_ok();
+        // let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
         Ok(Config {
             query,

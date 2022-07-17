@@ -11,7 +11,7 @@ impl Rectangle {
 }
 
 // ANCHOR: here
-#[cfg(test)]
+#[cfg(test)]  // K_22715 #[cfg(test)] 注解告诉Rust 只在执行 cargo test 时才编译和运行测试代码，而在运行 cargo build 时不这么做
 mod tests {
     use super::*;
 

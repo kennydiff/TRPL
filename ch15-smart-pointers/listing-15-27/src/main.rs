@@ -1,4 +1,3 @@
-// ANCHOR: here
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -7,9 +6,7 @@ struct Node {
     value: i32,
     children: RefCell<Vec<Rc<Node>>>,
 }
-// ANCHOR_END: here
 
-// ANCHOR: there
 fn main() {
     let leaf = Rc::new(Node {
         value: 3,
@@ -21,4 +18,3 @@ fn main() {
         children: RefCell::new(vec![Rc::clone(&leaf)]),
     });
 }
-// ANCHOR_END: there

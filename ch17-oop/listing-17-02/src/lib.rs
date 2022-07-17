@@ -3,7 +3,6 @@ pub struct AveragedCollection {
     average: f64,
 }
 
-// ANCHOR: here
 impl AveragedCollection {
     pub fn add(&mut self, value: i32) {
         self.list.push(value);
@@ -30,4 +29,3 @@ impl AveragedCollection {
         self.average = total as f64 / self.list.len() as f64;
     }
 }
-// ANCHOR_END: here

@@ -3,7 +3,6 @@ struct Point {
     y: i32,
 }
 
-// ANCHOR: here
 fn main() {
     let p = Point { x: 0, y: 7 };
 
@@ -13,4 +12,3 @@ fn main() {
         Point { x, y } => println!("On neither axis: ({}, {})", x, y),
     }
 }
-// ANCHOR_END: here

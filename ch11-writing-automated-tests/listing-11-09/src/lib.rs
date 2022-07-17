@@ -28,9 +28,10 @@ mod tests {
     use super::*;
 
     #[test]
-    #[should_panic(expected = "less than or equal to 100")]
+    #[should_panic(expected = "less than or equal to 100")]  // K_22716 - should_panic 添加期望信息，没有出现期望信息都算作Fail
     fn greater_than_100() {
-        Guess::new(200);
+        Guess::new(101);
+        // Guess::new(0);
     }
 }
 // ANCHOR_END: here

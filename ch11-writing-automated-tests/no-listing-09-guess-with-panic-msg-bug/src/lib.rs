@@ -7,12 +7,12 @@ impl Guess {
         // ANCHOR: here
         if value < 1 {
             panic!(
-                "Guess value must be less than or equal to 100, got {}.",
+                "Guess value must be greater than or equal to 1, got {}.",
                 value
             );
         } else if value > 100 {
             panic!(
-                "Guess value must be greater than or equal to 1, got {}.",
+                "Guess value must be less than or equal to 100, got {}.",
                 value
             );
         }
@@ -27,7 +27,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[should_panic(expected = "less than or equal to 100")]
+    #[should_panic(expected = "less than or equal to 100")]  // K_22715 expected 期望的字符串...
     fn greater_than_100() {
         Guess::new(200);
     }

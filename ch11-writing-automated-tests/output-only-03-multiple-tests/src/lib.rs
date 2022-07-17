@@ -1,4 +1,4 @@
-pub fn add_two(a: i32) -> i32 {
+pub fn add_two(a: i32) -> i32 {  // K_22716 multi
     a + 2
 }
 

@@ -17,7 +17,7 @@ fn main() {
     let result = largest(&number_list);
     println!("The largest number is {}", result);
     // ANCHOR_END: here
-    assert_eq!(*result, 100);
+    assert_eq!(*result, 100);  // K_22714 类似测试代码，如果运行Panic，表明与测试用例/算法...不符合
     // ANCHOR: here
 
     let number_list = vec![102, 34, 6000, 89, 54, 2, 43, 8];

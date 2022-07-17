@@ -17,7 +17,6 @@ struct Point {
 
 impl OutlinePrint for Point {}
 
-// ANCHOR: here
 use std::fmt;
 
 impl fmt::Display for Point {
@@ -25,7 +24,6 @@ impl fmt::Display for Point {
         write!(f, "({}, {})", self.x, self.y)
     }
 }
-// ANCHOR_END: here
 
 fn main() {
     let p = Point { x: 1, y: 3 };

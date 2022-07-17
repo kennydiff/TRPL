@@ -1,4 +1,3 @@
-// ANCHOR: here
 //! # Art
 //!
 //! A library for modeling artistic concepts.
@@ -25,10 +24,6 @@ pub mod utils {
     /// Combines two primary colors in equal amounts to create
     /// a secondary color.
     pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -> SecondaryColor {
-        // --snip--
-        // ANCHOR_END: here
-        unimplemented!();
-        // ANCHOR: here
+        SecondaryColor::Orange
     }
 }
-// ANCHOR_END: here

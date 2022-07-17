@@ -2,8 +2,9 @@
 fn main() {
     let string1 = String::from("long string is long");
     let result;
+    
     {
-        let string2 = String::from("xyz");
+        let string2 = String::from("xyz");  // K_22715 这句放到大括弧上面则可以编译通过
         result = longest(string1.as_str(), string2.as_str());
     }
     println!("The longest string is {}", result);

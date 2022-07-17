@@ -23,12 +23,12 @@ fn main() {
 }
 
 // ANCHOR: here
-fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(config.file_path)?;
+fn run(config: Config) -> Result<(), Box<dyn Error>> {  // K_22716 dyn，它是 “动态的”（“dynamic”）的缩写
+    let contents = fs::read_to_string(config.file_path)?;  // K_22716 "?" 会从函数中返回错误值并让调用者来处理它
 
     println!("With text:\n{contents}");
 
-    Ok(())
+    Ok(())  // K_22716 unit 类型 "()" , 一个空的tuple， 将 unit 类型值包装进 Ok 值中
 }
 // ANCHOR_END: here
 

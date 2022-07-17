@@ -3,10 +3,7 @@ pub struct Post {
     content: String,
 }
 
-// ANCHOR: here
 impl Post {
-    // --snip--
-    // ANCHOR_END: here
     pub fn new() -> Post {
         Post {
             state: Some(Box::new(Draft {})),
@@ -22,7 +19,6 @@ impl Post {
         ""
     }
 
-    // ANCHOR: here
     pub fn request_review(&mut self) {
         if let Some(s) = self.state.take() {
             self.state = Some(s.request_review())
@@ -49,4 +45,3 @@ impl State for PendingReview {
         self
     }
 }
-// ANCHOR_END: here

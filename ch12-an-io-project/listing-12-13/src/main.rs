@@ -1,6 +1,9 @@
 use std::env;
 use std::process;
 
+use minigrep::{Config,run};  // K_22716 这里要用花括号
+// use minigrep::run;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 

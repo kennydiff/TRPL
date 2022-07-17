@@ -17,7 +17,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[should_panic]
+    #[should_panic]  // K_22716 - should_panic 这个标签表示：如果发生了Panic就是我们想要的结果，通过测试.
     fn greater_than_100() {
         Guess::new(200);
     }

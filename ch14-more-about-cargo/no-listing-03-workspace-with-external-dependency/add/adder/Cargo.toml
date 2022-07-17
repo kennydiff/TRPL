@@ -1,8 +1,9 @@
 [package]
 name = "adder"
 version = "0.1.0"
-edition = "2021"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
 
 [dependencies]
 
-add_one = { path = "../add_one" }
+add-one = { path = "../add-one" }

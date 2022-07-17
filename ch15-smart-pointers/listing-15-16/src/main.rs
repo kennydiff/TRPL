@@ -8,7 +8,6 @@ impl Drop for CustomSmartPointer {
     }
 }
 
-// ANCHOR: here
 fn main() {
     let c = CustomSmartPointer {
         data: String::from("some data"),
@@ -17,4 +16,3 @@ fn main() {
     drop(c);
     println!("CustomSmartPointer dropped before the end of main.");
 }
-// ANCHOR_END: here

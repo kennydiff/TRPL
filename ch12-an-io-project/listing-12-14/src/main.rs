@@ -18,8 +18,8 @@ fn main() {
     println!("In file {}", config.file_path);
 
     // ANCHOR: here
-    if let Err(e) = minigrep::run(config) {
-        // --snip--
+    if let Err(e) = minigrep::run(config) {  // K_22716 这里注意 if let 的写法，替代了 match, Catch的是Err的错误
+        // --snip--  // K_22716 执行 minigrep::run()函数,如果错了,则执行后续block里的代码
         // ANCHOR_END: here
         println!("Application error: {e}");
 

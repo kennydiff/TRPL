@@ -1,4 +1,3 @@
-// ANCHOR: here
 use std::cell::RefCell;
 use std::rc::{Rc, Weak};
 
@@ -8,9 +7,7 @@ struct Node {
     parent: RefCell<Weak<Node>>,
     children: RefCell<Vec<Rc<Node>>>,
 }
-// ANCHOR_END: here
 
-// ANCHOR: there
 fn main() {
     let leaf = Rc::new(Node {
         value: 3,
@@ -30,4 +27,3 @@ fn main() {
 
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
 }
-// ANCHOR_END: there

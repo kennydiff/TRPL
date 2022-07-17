@@ -1,5 +1,6 @@
 // ANCHOR: here
-fn first_word(s: &str) -> &str {
+// fn first_word(s: &str) -> &str {
+fn first_word<'a>(s: &'a str) -> &'a str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {

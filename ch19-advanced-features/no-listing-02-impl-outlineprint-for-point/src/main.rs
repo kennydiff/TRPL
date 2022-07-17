@@ -12,14 +12,12 @@ trait OutlinePrint: fmt::Display {
     }
 }
 
-// ANCHOR: here
 struct Point {
     x: i32,
     y: i32,
 }
 
 impl OutlinePrint for Point {}
-// ANCHOR_END: here
 
 fn main() {
     let p = Point { x: 1, y: 3 };

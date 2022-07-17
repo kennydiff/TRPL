@@ -1,5 +1,4 @@
 fn main() {
-    // ANCHOR: here
     let mut v = vec![1, 2, 3, 4, 5, 6];
 
     let r = &mut v[..];
@@ -8,5 +7,4 @@ fn main() {
 
     assert_eq!(a, &mut [1, 2, 3]);
     assert_eq!(b, &mut [4, 5, 6]);
-    // ANCHOR_END: here
 }

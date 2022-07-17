@@ -17,12 +17,10 @@ impl<T> MyBox<T> {
 }
 
 fn hello(name: &str) {
-    println!("Hello, {name}!");
+    println!("Hello, {}!", name);
 }
 
-// ANCHOR: here
 fn main() {
     let m = MyBox::new(String::from("Rust"));
     hello(&m);
 }
-// ANCHOR_END: here

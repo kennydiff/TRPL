@@ -5,7 +5,7 @@ use std::fs;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let (query, file_path) = parse_config(&args);
+    let (query, file_path) = parse_config(&args);  // K_22716 touple 初始化赋值的方式
 
     // --snip--
     // ANCHOR_END: here

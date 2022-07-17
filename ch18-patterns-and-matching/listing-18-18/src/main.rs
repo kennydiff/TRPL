@@ -1,5 +1,4 @@
 fn main() {
-    // ANCHOR: here
     let mut setting_value = Some(5);
     let new_setting_value = Some(10);
 
@@ -13,5 +12,4 @@ fn main() {
     }
 
     println!("setting is {:?}", setting_value);
-    // ANCHOR_END: here
 }

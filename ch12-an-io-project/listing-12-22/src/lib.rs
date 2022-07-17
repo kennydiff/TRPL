@@ -17,8 +17,8 @@ impl Config {
 
         let query = args[1].clone();
         let file_path = args[2].clone();
-
-        Ok(Config { query, file_path })
+        // let ignore_case = false;
+        Ok(Config { query, file_path, ignore_case: false})  // K_22716 ignore_case: false 这样写也可以的
     }
 }
 

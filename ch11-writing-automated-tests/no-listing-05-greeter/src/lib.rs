@@ -10,5 +10,6 @@ mod tests {
     fn greeting_contains_name() {
         let result = greeting("Carol");
         assert!(result.contains("Carol"));
+        // assert!(result.contains("Hello"));
     }
 }

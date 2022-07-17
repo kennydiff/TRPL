@@ -1,5 +1,4 @@
 fn main() {
-    // ANCHOR: here
     enum Message {
         Hello { id: i32 },
     }
@@ -15,5 +14,4 @@ fn main() {
         }
         Message::Hello { id } => println!("Found some other id: {}", id),
     }
-    // ANCHOR_END: here
 }

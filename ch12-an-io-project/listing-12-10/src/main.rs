@@ -6,8 +6,8 @@ use std::process;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let config = Config::build(&args).unwrap_or_else(|err| {
-        println!("Problem parsing arguments: {err}");
+    let config = Config::build(&args).unwrap_or_else(|err| {  // K_22716 这里的|err|{...}是个<闭包> 也叫匿名函数
+        println!("Problem parsing arguments: {err}");  // K_22716 err是这个匿名函数的参数
         process::exit(1);
     });
 

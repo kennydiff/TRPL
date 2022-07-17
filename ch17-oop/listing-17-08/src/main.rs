@@ -1,4 +1,3 @@
-// ANCHOR: here
 use gui::Draw;
 
 struct SelectBox {
@@ -12,6 +11,5 @@ impl Draw for SelectBox {
         // code to actually draw a select box
     }
 }
-// ANCHOR_END: here
 
 fn main() {}

@@ -2,7 +2,6 @@ pub trait Draw {
     fn draw(&self);
 }
 
-// ANCHOR: here
 pub struct Screen<T: Draw> {
     pub components: Vec<T>,
 }
@@ -17,4 +16,3 @@ where
         }
     }
 }
-// ANCHOR_END: here

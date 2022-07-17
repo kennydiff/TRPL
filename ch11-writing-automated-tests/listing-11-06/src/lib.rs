@@ -11,11 +11,11 @@ impl Rectangle {
 }
 
 // ANCHOR: here
-#[cfg(test)]
+#[cfg(test)]  // K_22716 cfg(test)的标签放到 mod 的前面
 mod tests {
     use super::*;
 
-    #[test]
+    #[test] // K_22716 test标签放到被测试的函数的前面
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
             width: 8,

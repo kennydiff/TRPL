@@ -3,10 +3,7 @@ pub struct Post {
     content: String,
 }
 
-// ANCHOR: here
 impl Post {
-    // --snip--
-    // ANCHOR_END: here
     pub fn new() -> Post {
         Post {
             state: Some(Box::new(Draft {})),
@@ -18,12 +15,10 @@ impl Post {
         self.content.push_str(text);
     }
 
-    // ANCHOR: here
     pub fn content(&self) -> &str {
         ""
     }
 }
-// ANCHOR_END: here
 
 trait State {}
 

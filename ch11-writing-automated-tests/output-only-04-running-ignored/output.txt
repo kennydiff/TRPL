@@ -1,4 +1,4 @@
-$ cargo test -- --ignored
+$ cargo test -- --ignored  # K_22716 注意这段的一个双横线,表示后面的参数是针对这个二进制程序的参数
    Compiling adder v0.1.0 (file:///projects/adder)
     Finished test [unoptimized + debuginfo] target(s) in 0.61s
      Running unittests src/lib.rs (target/debug/deps/adder-92948b65e88960b4)

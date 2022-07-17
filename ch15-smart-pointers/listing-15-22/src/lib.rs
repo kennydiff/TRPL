@@ -12,7 +12,7 @@ impl<'a, T> LimitTracker<'a, T>
 where
     T: Messenger,
 {
-    pub fn new(messenger: &'a T, max: usize) -> LimitTracker<'a, T> {
+    pub fn new(messenger: &T, max: usize) -> LimitTracker<T> {
         LimitTracker {
             messenger,
             value: 0,
@@ -37,7 +37,6 @@ where
     }
 }
 
-// ANCHOR: here
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -63,16 +62,11 @@ mod tests {
 
     #[test]
     fn it_sends_an_over_75_percent_warning_message() {
-        // --snip--
-        // ANCHOR_END: here
         let mock_messenger = MockMessenger::new();
         let mut limit_tracker = LimitTracker::new(&mock_messenger, 100);
 
         limit_tracker.set_value(80);
-        // ANCHOR: here
 
-        // ANCHOR: here
         assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
     }
 }
-// ANCHOR_END: here

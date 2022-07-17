@@ -3,10 +3,7 @@ pub struct Post {
     content: String,
 }
 
-// ANCHOR: here
 impl Post {
-    // --snip--
-    // ANCHOR_END: here
     pub fn new() -> Post {
         Post {
             state: Some(Box::new(Draft {})),
@@ -28,7 +25,6 @@ impl Post {
         }
     }
 
-    // ANCHOR: here
     pub fn approve(&mut self) {
         if let Some(s) = self.state.take() {
             self.state = Some(s.approve())
@@ -44,13 +40,10 @@ trait State {
 struct Draft {}
 
 impl State for Draft {
-    // --snip--
-    // ANCHOR_END: here
     fn request_review(self: Box<Self>) -> Box<dyn State> {
         Box::new(PendingReview {})
     }
 
-    // ANCHOR: here
     fn approve(self: Box<Self>) -> Box<dyn State> {
         self
     }
@@ -59,13 +52,10 @@ impl State for Draft {
 struct PendingReview {}
 
 impl State for PendingReview {
-    // --snip--
-    // ANCHOR_END: here
     fn request_review(self: Box<Self>) -> Box<dyn State> {
         self
     }
 
-    // ANCHOR: here
     fn approve(self: Box<Self>) -> Box<dyn State> {
         Box::new(Published {})
     }
@@ -82,4 +72,3 @@ impl State for Published {
         self
     }
 }
-// ANCHOR_END: here

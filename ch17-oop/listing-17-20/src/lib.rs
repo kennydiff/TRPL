@@ -18,15 +18,11 @@ impl Post {
     }
 }
 
-// ANCHOR: here
 impl DraftPost {
-    // --snip--
-    // ANCHOR_END: here
     pub fn add_text(&mut self, text: &str) {
         self.content.push_str(text);
     }
 
-    // ANCHOR: here
     pub fn request_review(self) -> PendingReviewPost {
         PendingReviewPost {
             content: self.content,
@@ -45,4 +41,3 @@ impl PendingReviewPost {
         }
     }
 }
-// ANCHOR_END: here

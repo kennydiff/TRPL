@@ -1,4 +1,3 @@
-// ANCHOR: here
 struct MyBox<T>(T);
 
 impl<T> MyBox<T> {
@@ -6,6 +5,5 @@ impl<T> MyBox<T> {
         MyBox(x)
     }
 }
-// ANCHOR_END: here
 
 fn main() {}

@@ -12,7 +12,6 @@ impl Draw for SelectBox {
     }
 }
 
-// ANCHOR: here
 use gui::{Button, Screen};
 
 fn main() {
@@ -37,4 +36,3 @@ fn main() {
 
     screen.run();
 }
-// ANCHOR_END: here

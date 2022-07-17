@@ -12,7 +12,7 @@ mod tests {
         let result = greeting("Carol");
         assert!(
             result.contains("Carol"),
-            "Greeting did not contain name, value was `{}`",
+            "SHIT, {}",  // "Greeting did not contain name, value was `{}`",
             result
         );
     }
