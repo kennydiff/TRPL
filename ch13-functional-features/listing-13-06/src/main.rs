@@ -9,8 +9,8 @@ fn generate_workout(intensity: u32, random_number: u32) {
     };
 
     if intensity < 25 {
-        println!("Today, do {} pushups!", expensive_closure(intensity));
-        println!("Next, do {} situps!", expensive_closure(intensity));
+        println!("Today, do {} pushups!", expensive_closure(intensity));  
+        println!("Next, do {} situps!", expensive_closure(intensity));  // K_22717 这里第二次调用了闭包,效率略低
     } else {
         if random_number == 3 {
             println!("Take a break today! Remember to stay hydrated!");

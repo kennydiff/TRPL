@@ -1,7 +1,7 @@
 use std::thread;
 use std::time::Duration;
 
-struct Cacher<T>
+struct Cacher<T>  // K_22717 Cacher 缓存器
 where
     T: Fn(u32) -> u32,
 {
@@ -22,8 +22,8 @@ where
 
     fn value(&mut self, arg: u32) -> u32 {
         match self.value {
-            Some(v) => v,
-            None => {
+            Some(v) => v,  // K_22717 有值就直接返回，不计算... 避免重复计算
+            None => {  // K_22717 没值，则计算一次...
                 let v = (self.calculation)(arg);
                 self.value = Some(v);
                 v

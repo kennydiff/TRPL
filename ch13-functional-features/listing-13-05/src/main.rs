@@ -2,6 +2,7 @@ use std::thread;
 use std::time::Duration;
 
 fn generate_workout(intensity: u32, random_number: u32) {
+    // K_22717 注意这个 let 语句意味着 expensive_closure 包含一个匿名函数的<定义>，不是调用匿名函数的<返回值>
     let expensive_closure = |num| {
         println!("calculating slowly...");
         thread::sleep(Duration::from_secs(2));

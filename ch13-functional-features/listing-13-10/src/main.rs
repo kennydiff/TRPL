@@ -1,6 +1,6 @@
 struct Cacher<T>
 where
-    T: Fn(u32) -> u32,
+    T: Fn(u32) -> u32, // K_22717 这里的","可以省略
 {
     calculation: T,
     value: Option<u32>,
